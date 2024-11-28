@@ -113,7 +113,7 @@ img {
 }
 #body.home div.header div h1 {
 	background: none;
-	color: #000000;
+	color: #ffffff;
 	display: block;
 	font-family: 'Arial Black';
 	font-size: 110px;
@@ -711,5 +711,3 @@ img {
 #footer div .connect a.facebook:hover {
 	background-position: -30px 0;
 }
-
-
