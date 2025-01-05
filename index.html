@@ -7,6 +7,75 @@
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 	<link rel="stylesheet" type="text/css" href="css/mobile.css">
 	<script src="js/mobile.js" type="text/javascript"></script>
+	<style>
+		/* Email input section */
+		.email-section {
+			background: url('images/food-background.jpg') no-repeat center center;
+			background-size: cover;
+			text-align: center;
+			padding: 50px 20px;
+		}
+
+		.email-section input[type="email"] {
+			padding: 10px;
+			font-size: 16px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			width: 300px;
+			color: #fff; /* 白色文字 */
+			background-color: rgba(0, 0, 0, 0.5); /* 半透明背景 */
+		}
+
+		.email-section button {
+			padding: 10px 20px;
+			margin-left: 10px;
+			font-size: 16px;
+			color: #fff;
+			background-color: #ff4081;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		.email-section button:hover {
+			background-color: #e73570;
+		}
+
+		/* Make a Change section */
+		.change-section {
+			background-color: #ff80ab;
+			text-align: center;
+			color: #fff;
+			padding: 50px 20px;
+		}
+
+		.change-section h1 {
+			font-size: 36px;
+			margin-bottom: 20px;
+		}
+
+		.change-section p {
+			font-size: 18px;
+			margin-bottom: 20px;
+			max-width: 600px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.change-section a {
+			display: inline-block;
+			padding: 10px 20px;
+			font-size: 16px;
+			color: #ff80ab;
+			background-color: #fff;
+			text-decoration: none;
+			border-radius: 5px;
+		}
+
+		.change-section a:hover {
+			background-color: #fce4ec;
+		}
+	</style>
 </head>
 <body>
 	<div id="page">
@@ -35,18 +104,18 @@
 			</div>
 		</div>
 		<div id="body" class="home">
-			<div class="header">
-				<div>
-					<h1> HEY!<br>LET'S SAVE</BR> THE FOOD</h1>
-					<span><a href="contact.html" class="email">Enter Email</a><a href="contact.html" class="signup">Sign Up</a></span>
-					<img src="images/runner.png" alt="">
-				</div>
+			<!-- Email Section -->
+			<div class="email-section">
+				<input type="email" placeholder="Enter your email">
+				<button>Sign Up</button>
 			</div>
+			
 			<div class="body">
-				<div>
-					<h1>MAKE A CHANGE</h1>
-					<p>What’s more, they’re absolutely free! You can do a lot with them. You can modify them.</p>
-					<a href="blog.html" class="more">Read More</a>
+				<!-- Make a Change Section -->
+				<div class="change-section">
+					<h1>Join the Fight Against Food Waste</h1>
+					<p>Be part of a movement to reduce food waste and promote sustainability. Together, we can ensure that no food goes to waste, benefiting communities and the planet.</p>
+					<a href="blog.html" class="more">Learn More</a>
 				</div>
 			</div>
 		</div>
