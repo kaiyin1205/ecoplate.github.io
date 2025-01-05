@@ -6,75 +6,97 @@
 	<title>Search - ECOPLATE</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 	<link rel="stylesheet" type="text/css" href="css/mobile.css">
-	<script src="js/mobile.js" type="text/javascript"></script>
+	<style>
+		.food-bank {
+			display: flex;
+			align-items: center;
+			background-color: #111;
+			color: #fff;
+			margin: 20px 0;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+		}
+		.food-bank img {
+			width: 150px;
+			height: 150px;
+			border-radius: 10px;
+			margin-right: 20px;
+			object-fit: cover;
+		}
+		.food-bank-content {
+			flex: 1;
+		}
+		.food-bank-content h2 {
+			margin: 0;
+			font-size: 1.5em;
+		}
+		.food-bank-content p {
+			margin: 10px 0;
+		}
+		.food-bank-content a {
+			display: inline-block;
+			padding: 10px 20px;
+			background-color: #f05a28;
+			color: #fff;
+			text-decoration: none;
+			border-radius: 5px;
+			font-weight: bold;
+			transition: background-color 0.3s ease;
+		}
+		.food-bank-content a:hover {
+			background-color: #d1491f;
+		}
+	</style>
 </head>
 <body>
 	<div id="page">
 		<div id="header">
-			<div id="navigation">
-				<span id="mobile-navigation">&nbsp;</span>
-				<a href="index.html" class="logo">
-					<img src="images/logo.png" alt="" style="width:300px; height:auto;"></a>
-				<ul id="menu">
-					<li>
-						<a href="index.html">Home</a>
-					</li>
-					<li>
-						<a href="about.html">About</a>
-					</li>
-					<li class="selected">
-						<a href="search.html">Search</a>
-					</li>
-					<li>
-						<a href="sdgs.html">SDGs</a>
-					</li>
-					<li>
-						<a href="contact.html">Contact</a>
-					</li>
-				</ul>
-			</div>
+			<h1 style="text-align: center; color: #fff; margin: 20px 0;">Food Bank Locations</h1>
 		</div>
-		<div id="body" class="search">
-			<div>
-				<h1>Food Bank Locations</h1>
-				<ul class="food-banks">
-					<li>
-						<h2>South Airport Happiness Food Bank</h2>
-						<p>Address: 1F, No. 12, Lane 301, Section 2, Zhonghua Road, Zhongzheng District, Taipei City 100</p>
-						<p>Phone: (02) 2332-9974</p>
-						<a href="https://goo.gl/maps/your_map_link_1" target="_blank">View on Google Maps</a>
-					</li>
-					<li>
-						<h2>Shared Zone - Taipei Lion Light Station</h2>
-						<p>Address: 1F, No. 559, Section 3, Heping East Road, Xinyi District, Taipei City 110</p>
-						<p>Phone: (02) 8732-8814</p>
-						<a href="https://goo.gl/maps/your_map_link_2" target="_blank">View on Google Maps</a>
-					</li>
-					<li>
-						<h2>Shared Zone - Hualien Ji’an Station</h2>
-						<p>Address: No. 529-1, Section 3, Zhongyang Road, Ji’an Township, Hualien County 973</p>
-						<p>Phone: (03) 846-0023</p>
-						<a href="https://goo.gl/maps/your_map_link_3" target="_blank">View on Google Maps</a>
-					</li>
-					<li>
-						<h2>Shared Zone - Pingtung Wanluan Station</h2>
-						<p>Address: No. 3-1, Zhongxing Road, Xin Zhi Village, Wanluan Township, Pingtung County 923</p>
-						<p>Phone: (08) 783-3083</p>
-						<a href="https://goo.gl/maps/your_map_link_4" target="_blank">View on Google Maps</a>
-					</li>
-				</ul>
+		<div id="body">
+			<div class="food-bank">
+				<img src="images/foodbank1.jpg" alt="South Airport Happiness Food Bank">
+				<div class="food-bank-content">
+					<h2>South Airport Happiness Food Bank</h2>
+					<p>Address: 1F, No. 12, Lane 301, Section 2, Zhonghua Road, Zhongzheng District, Taipei City 100</p>
+					<p>Phone: (02) 2332-9974</p>
+					<a href="https://maps.app.goo.gl/2NBsFBQexyzN4TmQ8" target="_blank">Google Map</a>
+				</div>
+			</div>
+			<div class="food-bank">
+				<img src="images/foodbank2.jpg" alt="Shared Zone - Taipei Lion Light Station">
+				<div class="food-bank-content">
+					<h2>Shared Zone - Taipei Lion Light Station</h2>
+					<p>Address: 1F, No. 559, Section 3, Heping East Road, Xinyi District, Taipei City 110</p>
+					<p>Phone: (02) 8732-8814</p>
+					<a href="https://maps.app.goo.gl/JRf1Lwfgud5Q8nN76" target="_blank">Google Map</a>
+				</div>
+			</div>
+			<div class="food-bank">
+				<img src="images/foodbank3.jpg" alt="Shared Zone - Hualien Ji’an Station">
+				<div class="food-bank-content">
+					<h2>Shared Zone - Hualien Ji’an Station</h2>
+					<p>Address: No. 529-1, Section 3, Zhongyang Road, Ji’an Township, Hualien County 973</p>
+					<p>Phone: (03) 846-0023</p>
+					<a href="https://maps.app.goo.gl/we5Rp8SWMaiZVbaL9" target="_blank">Google Map</a>
+				</div>
+			</div>
+			<div class="food-bank">
+				<img src="images/foodbank4.jpg" alt="Shared Zone - Pingtung Wanluan Station">
+				<div class="food-bank-content">
+					<h2>Shared Zone - Pingtung Wanluan Station</h2>
+					<p>Address: No. 3-1, Zhongxing Road, Xin Zhi Village, Wanluan Township, Pingtung County 923</p>
+					<p>Phone: (08) 783-3083</p>
+					<a href="https://maps.app.goo.gl/1hjWQRwZZQqaa9CU7" target="_blank">Google Map</a>
+				</div>
 			</div>
 		</div>
 		<div id="footer">
-			<div>
-				<div class="connect">
-					<a href="https://www.instagram.com/kaiyinn__/" class="instagram">Instagram</a>
-					<a href="https://www.facebook.com/profile.php?id=100006154568783" class="facebook">Facebook</a>
-				</div>
-				<p style="text-align: center;">&copy; 2025 by KELLY. All rights reserved.</p>
-			</div>
+			<p style="text-align: center; color: #fff; margin: 20px 0;">&copy; 2025 by KELLY. All rights reserved.</p>
 		</div>
 	</div>
 </body>
 </html>
+
 
