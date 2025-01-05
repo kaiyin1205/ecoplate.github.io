@@ -55,27 +55,29 @@
     </div>
 
     <script>
-        // Initialize the map
-        var map = L.map('map').setView([23.6978, 120.9605], 8); // Center map on Taiwan
+        document.addEventListener("DOMContentLoaded", function () {
+            // Initialize the map after the page has fully loaded
+            var map = L.map('map').setView([23.6978, 120.9605], 8); // Center map on Taiwan
 
-        // Add OpenStreetMap tiles
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '© OpenStreetMap contributors'
-        }).addTo(map);
+            // Add OpenStreetMap tiles
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
 
-        // Example heart meal sharing locations in Taiwan
-        var locations = [
-            { name: "Taipei Love Meal Center", lat: 25.0330, lng: 121.5654 },
-            { name: "Kaohsiung Love Meal Spot", lat: 22.6273, lng: 120.3014 },
-            { name: "Taichung Kindness Kitchen", lat: 24.1477, lng: 120.6736 }
-        ];
+            // Example heart meal sharing locations in Taiwan
+            var locations = [
+                { name: "Taipei Love Meal Center", lat: 25.0330, lng: 121.5654 },
+                { name: "Kaohsiung Love Meal Spot", lat: 22.6273, lng: 120.3014 },
+                { name: "Taichung Kindness Kitchen", lat: 24.1477, lng: 120.6736 }
+            ];
 
-        // Add markers to the map
-        locations.forEach(function(location) {
-            L.marker([location.lat, location.lng])
-                .addTo(map)
-                .bindPopup('<b>' + location.name + '</b>');
+            // Add markers to the map
+            locations.forEach(function(location) {
+                L.marker([location.lat, location.lng])
+                    .addTo(map)
+                    .bindPopup('<b>' + location.name + '</b>');
+            });
         });
     </script>
 </body>
