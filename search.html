@@ -57,6 +57,13 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            // Set default icon options
+            L.Icon.Default.mergeOptions({
+                iconUrl: 'https://kaiyin1205.github.io/ecoplate.github.io/leaflet/marker-icon.png',
+                iconRetinaUrl: 'https://kaiyin1205.github.io/ecoplate.github.io/leaflet/marker-icon-2x.png',
+                shadowUrl: 'https://kaiyin1205.github.io/ecoplate.github.io/leaflet/marker-shadow.png'
+            });
+
             // Initialize the map after the page has fully loaded
             var map = L.map('map').setView([23.6978, 120.9605], 8); // Center map on Taiwan
 
