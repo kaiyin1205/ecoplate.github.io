@@ -7,7 +7,7 @@ body {
 }
 body #page {
     margin: 0;
-    overflow: hidden; /* 如果影響地圖顯示，可改為 overflow: visible; */
+    overflow: hidden;
     padding: 0;
     width: auto;
 }
@@ -93,7 +93,7 @@ img {
     background: url(../images/bg-home.jpeg) no-repeat center top;
     border-top: 2px solid #252525;
     margin: 0;
-    overflow: hidden; /* 如果影響地圖顯示，可改為 overflow: visible; */
+    overflow: hidden;
     padding: 0;
     position: relative;
     width: 100%;
@@ -196,41 +196,71 @@ img {
     text-align: center;
     text-transform: uppercase;
 }
-
-/*----------------------------------------新增地圖樣式---------------------------------------*/
 #map {
-    height: 500px; /* 設定地圖高度，確保可見 */
-    width: 100%;   /* 設定地圖寬度，確保可見 */
-    position: relative; /* 防止被父元素影響定位 */
-    overflow: visible;  /* 防止內容被裁切 */
-    margin: 20px 0;     /* 增加間距，提升可視性 */
-}
-
-/*----------------------------------------footer-styles---------------------------------------*/
-#footer {
-    background-color: #111111;
-    margin: 0;
-    min-height: 122px;
-    padding: 0;
+    height: 500px;
     width: 100%;
+    margin: 20px 0;
+    position: relative;
+    overflow: visible;
 }
-#footer div {
+/*----------------------------------------body-styles---------------------------------------*/
+#body div {
+    background: url(../images/bg-transparent2.png) repeat;
     margin: 0 auto;
-    max-width: 940px;
+    max-width: 960px;
     overflow: hidden;
-    padding: 47px 10px 42px;
+    padding: 58px 0 4px;
 }
-#footer div p {
-    color: #FFFFFF;
-    float: left;
-    font-family: Arial;
-    font-size: 15px;
+#body.running div {
+    padding: 58px 0 161px;
+}
+#body div h1 {
+    background: url(../images/bg-border2.gif) no-repeat center bottom;
+    color: #FC416F;
+    font-family: 'Arial Black';
+    font-size: 40px;
     font-weight: normal;
-    line-height: 15px;
+    line-height: 40px;
     margin: 0;
-    padding: 5px 0 0;
-    text-align: left;
-    text-transform: none;
-    width: 400px;
+    padding: 0 0 20px;
+    text-align: center;
+    text-transform: uppercase;
 }
+#body div img {
+    display: block;
+    margin: 68px auto 47px;
+    padding: 0;
+    width: auto;
+}
+#body.runningsinglepost div img {
+    display: block;
+    margin: 68px auto 73px;
+    padding: 0;
+    width: auto;
+}
+#body.runningsinglepost div h3 {
+    padding: 17px 0 0;
+}
+#body.runningsinglepost div h3 span {
+    padding: 0 0 12px;
+}
+#body.runningsinglepost div p {
+    margin: 0 auto 10px;
+}
+#body div p {
+    color: #FFFFFF;
+    display: block;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: 0.01em;
+    line-height: 48px;
+    margin: 0 auto 37px;
+    padding: 0;
+    text-align: center;
+    width: 765px;
+}
+#body div p span {
+    color: #FFFFFF;
+   
 
