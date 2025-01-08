@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>search - ECOPLATE</title>
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet" type="text/css" href="css/mobile.css">
-    <script src="js/mobile.js" type="text/javascript"></script>
-    <!-- Leaflet CSS and JS -->
     <link rel="stylesheet" href="leaflet/leaflet.css" />
     <script src="leaflet/leaflet.js"></script>
     <style>
@@ -19,42 +15,18 @@
     </style>
 </head>
 <body>
-    <div id="page">
-        <div id="header">
-            <div id="navigation">
-                <span id="mobile-navigation">&nbsp;</span>
-                <a href="index.html" class="logo">
-                    <img src="images/logo.png" alt="" style="width:300px; height:auto;">
-                </a>
-                <ul id="menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li class="selected"><a href="running.html">Search</a></li>
-                    <li><a href="sdgs.html">SDGs</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-        <div id="body" class="running">
-            <div>
-                <h1>SEARCH</h1>
-                <div id="map"></div>
-                <h3><span>What’s more, they’re absolutely free! You can do a lot with them. You can modify them.</span></h3>
-            </div>
-        </div>
-        <div id="footer">
-            <div>
-                <div class="connect">
-                    <a href="https://x.com/kellyhuang1205?s=11" class="twitter">twitter</a>
-                    <a href="https://www.facebook.com/profile.php?id=100006154568783" class="facebook">facebook</a>
-                </div>
-                <p style="text-align: center;">&copy; 2025 by KELLY. All rights reserved.</p>
-            </div>
-        </div>
-    </div>
+    <h1>SEARCH</h1>
+    <div id="map"></div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            // Set default icon options
+            L.Icon.Default.mergeOptions({
+                iconUrl: 'leaflet/marker-icon.png',
+                iconRetinaUrl: 'leaflet/marker-icon-2x.png',
+                shadowUrl: 'leaflet/marker-shadow.png'
+            });
+
             // Initialize the map after the page has fully loaded
             var map = L.map('map').setView([23.6978, 120.9605], 8); // Center map on Taiwan
 
@@ -64,7 +36,7 @@
                 attribution: '© OpenStreetMap contributors'
             }).addTo(map);
 
-            // Example heart meal sharing locations in Taiwan
+            // Example locations in Taiwan
             var locations = [
                 { name: "Taipei Love Meal Center", lat: 25.0330, lng: 121.5654 },
                 { name: "Kaohsiung Love Meal Spot", lat: 22.6273, lng: 120.3014 },
