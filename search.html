@@ -59,10 +59,11 @@
         document.addEventListener("DOMContentLoaded", function () {
             // 修正圖片資源路徑
             L.Icon.Default.mergeOptions({
-                iconUrl: 'images/marker-icon.png',
-                iconRetinaUrl: 'images/marker-icon-2x.png',
-                shadowUrl: 'images/marker-shadow.png'
+            iconUrl: 'https://kaiyin1205.github.io/ecoplate.github.io/images/marker-icon.png',
+            iconRetinaUrl: 'https://kaiyin1205.github.io/ecoplate.github.io/images/marker-icon-2x.png',
+            shadowUrl: 'https://kaiyin1205.github.io/ecoplate.github.io/images/marker-shadow.png'
             });
+
 
             // 初始化地圖
             var map = L.map('map').setView([23.6978, 120.9605], 8); // Center map on Taiwan
