@@ -97,6 +97,7 @@ img {
 	padding: 0;
 	position: relative;
 	width: 100%;
+	background-attachment: scroll;
 }
 #body.home div {
 	background: none;
