@@ -57,30 +57,30 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Set default icon options
+            // 修正圖標路徑
             L.Icon.Default.mergeOptions({
-                iconUrl: 'https://kaiyin1205.github.io/ecoplate.github.io/leaflet/marker-icon.png',
-                iconRetinaUrl: 'https://kaiyin1205.github.io/ecoplate.github.io/leaflet/marker-icon-2x.png',
-                shadowUrl: 'https://kaiyin1205.github.io/ecoplate.github.io/leaflet/marker-shadow.png'
+                iconUrl: 'https://kaiyin1205.github.io/ecoplate.github.io/leaflet/images/marker-icon.png',
+                iconRetinaUrl: 'https://kaiyin1205.github.io/ecoplate.github.io/leaflet/images/marker-icon-2x.png',
+                shadowUrl: 'https://kaiyin1205.github.io/ecoplate.github.io/leaflet/images/marker-shadow.png'
             });
 
-            // Initialize the map after the page has fully loaded
+            // 初始化地圖
             var map = L.map('map').setView([23.6978, 120.9605], 8); // Center map on Taiwan
 
-            // Add OpenStreetMap tiles
+            // 添加 OpenStreetMap 圖層
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 maxZoom: 19,
                 attribution: '© OpenStreetMap contributors'
             }).addTo(map);
 
-            // Example heart meal sharing locations in Taiwan
+            // 添加測試地點
             var locations = [
                 { name: "Taipei Love Meal Center", lat: 25.0330, lng: 121.5654 },
                 { name: "Kaohsiung Love Meal Spot", lat: 22.6273, lng: 120.3014 },
                 { name: "Taichung Kindness Kitchen", lat: 24.1477, lng: 120.6736 }
             ];
 
-            // Add markers to the map
+            // 在地圖上添加標記
             locations.forEach(function(location) {
                 L.marker([location.lat, location.lng])
                     .addTo(map)
