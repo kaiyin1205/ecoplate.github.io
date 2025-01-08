@@ -93,11 +93,11 @@ img {
 	background: url(../images/bg-home.jpeg) no-repeat center top;
 	background-attachment: scroll; /* 背景隨滾動移動 */
     	background-size: cover; /* 背景圖片填滿容器 */
-	border-top: 2px solid #252525;
 	margin: 0;
 	padding: 0;
 	position: relative;
 	width: 100%;
+	height: 100vh;
 }
 #body.home div {
 	background: none;
