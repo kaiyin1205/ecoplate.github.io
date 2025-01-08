@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>search - ECOPLATE</title>
     <!-- Leaflet CSS and JS -->
-    <link rel="stylesheet" href="https://kaiyin1205.github.io/ecoplate.github.io/leaflet/leaflet.css" />
-    <script src="https://kaiyin1205.github.io/ecoplate.github.io/leaflet/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" type="text/css" href="css/mobile.css">
@@ -57,7 +57,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // 修正 Leaflet 預設圖標的資源路徑
+            // 手動覆蓋 Leaflet 預設圖標的資源路徑
             L.Icon.Default.mergeOptions({
                 iconUrl: 'https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon.png',
                 iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon-2x.png',
