@@ -14,22 +14,23 @@
 			<div id="navigation">
 				<span id="mobile-navigation">&nbsp;</span>
 				<a href="index.html" class="logo">
-					<img src="images/logo.png" alt="" style="width:300px; height:auto;"></a>
+					<img src="images/logo.png" alt="" style="width:300px; height:auto;">
+				</a>
 				<ul id="menu">
 					<li class="selected">
-						<a href="index.html">Home</a>
+						<a href="index.html" target="contentFrame">Home</a>
 					</li>
 					<li>
-						<a href="about.html">About</a>
+						<a href="about.html" target="contentFrame">About</a>
 					</li>
 					<li>
-						<a href="search.html">Search</a>
+						<a href="search.html" target="contentFrame">Search</a>
 					</li>
 					<li>
-						<a href="sdgs.html">SDGs</a>
+						<a href="sdgs.html" target="contentFrame">SDGs</a>
 					</li>
 					<li>
-						<a href="contact.html">Contact</a>
+						<a href="contact.html" target="contentFrame">Contact</a>
 					</li>
 				</ul>
 			</div>
@@ -38,14 +39,14 @@
 			<div class="header">
 				<div>
 					<h1> HEY!<br>LET'S SAVE</BR> THE FOOD</h1>
-					<span><a href="contact.html" class="email">Enter Email</a><a href="contact.html" class="signup">Sign Up</a></span>
+					<span><a href="contact.html" target="contentFrame" class="email">Enter Email</a><a href="contact.html" target="contentFrame" class="signup">Sign Up</a></span>
 				</div>
 			</div>
 			<div class="body">
 				<div>
 					<h1>Join the Fight Against Food Waste</h1>
 					<p>Be part of a movement to reduce food waste and promote sustainability. Together, we can ensure that no food goes to waste, benefiting communities and the planet.</p>
-					<a href="about.html" class="more">Read More</a>
+					<a href="about.html" target="contentFrame" class="more">Read More</a>
 				</div>
 			</div>
 		</div>
@@ -59,7 +60,12 @@
 			</div>
 		</div>
 	</div>
-	<iframe src="player.html" style="display:none;" name="musicPlayer"></iframe>
+
+	<!-- 嵌入的 iframe -->
+	<iframe src="index.html" name="contentFrame" style="width: 100%; height: 90vh; border: none;"></iframe>
+
+	<!-- 隱藏的音樂播放器 -->
+	<iframe src="player.html" style="display: none;" name="musicPlayer"></iframe>
 </body>
 </html>
 
