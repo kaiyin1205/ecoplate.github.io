@@ -4,19 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>search - ECOPLATE</title>
-    <!-- Leaflet CSS and JS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" type="text/css" href="css/mobile.css">
-    <!-- Custom JS -->
-    <script src="js/mobile.js" type="text/javascript"></script>
     <style>
-        #map {
-            height: 500px;
-            width: 100%;
+        #image-carousel {
+            text-align: center;
             margin: 20px 0;
+        }
+
+        .carousel-image {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            display: none;
+        }
+
+        .carousel-image:first-child {
+            display: block;
+        }
+
+        .carousel {
+            position: relative;
+        }
+
+        .carousel button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .carousel button:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .carousel .prev {
+            left: 10px;
+        }
+
+        .carousel .next {
+            right: 10px;
         }
     </style>
 </head>
@@ -40,8 +73,16 @@
         <div id="body" class="running">
             <div>
                 <h1>SEARCH</h1>
-                <div id="map"></div>
-                <h3><span>What’s more, they’re absolutely free! You can do a lot with them. You can modify them.</span></h3>
+                <div id="image-carousel" class="carousel">
+                    <button class="prev" onclick="showPrevImage()">←</button>
+                    <img src="images/taipei.jpg" alt="台北愛心餐點中心" class="carousel-image">
+                    <img src="images/kaohsiung.jpg" alt="高雄愛心餐點站" class="carousel-image">
+                    <img src="images/taichung.jpg" alt="台中慈善廚房" class="carousel-image">
+                    <img src="images/hualien.jpg" alt="花蓮社區廚房" class="carousel-image">
+                    <img src="images/taitung.jpg" alt="台東幸福食物銀行" class="carousel-image">
+                    <button class="next" onclick="showNextImage()">→</button>
+                </div>
+                <h3><span>Explore Taiwan's top food sharing platforms.</span></h3>
             </div>
         </div>
         <div id="footer">
@@ -56,38 +97,23 @@
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // 手動覆蓋 Leaflet 預設圖標的資源路徑
-            L.Icon.Default.mergeOptions({
-                iconUrl: 'https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon.png',
-                iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon-2x.png',
-                shadowUrl: 'https://unpkg.com/leaflet@1.9.3/dist/images/marker-shadow.png'
-            });
+        const images = document.querySelectorAll('.carousel-image');
+        let currentIndex = 0;
 
-            // 初始化地圖
-            var map = L.map('map').setView([23.6978, 120.9605], 8); // Center map on Taiwan
+        function showNextImage() {
+            images[currentIndex].style.display = 'none';
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].style.display = 'block';
+        }
 
-            // 添加 OpenStreetMap 圖層
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                maxZoom: 19,
-                attribution: '© OpenStreetMap contributors'
-            }).addTo(map);
+        function showPrevImage() {
+            images[currentIndex].style.display = 'none';
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            images[currentIndex].style.display = 'block';
+        }
 
-            // 添加測試地點
-            var locations = [
-                { name: "Taipei Love Meal Center", lat: 25.0330, lng: 121.5654 },
-                { name: "Kaohsiung Love Meal Spot", lat: 22.6273, lng: 120.3014 },
-                { name: "Taichung Kindness Kitchen", lat: 24.1477, lng: 120.6736 }
-            ];
-
-            // 在地圖上添加標記
-            locations.forEach(function(location) {
-                L.marker([location.lat, location.lng])
-                    .addTo(map)
-                    .bindPopup('<b>' + location.name + '</b>');
-            });
-        });
+        // 自動輪播每3秒切換一次圖片
+        setInterval(showNextImage, 3000);
     </script>
-    <iframe src="player.html" style="display:none;" name="musicPlayer"></iframe>
 </body>
 </html>
