@@ -705,7 +705,7 @@ img {
 	width: 28px;
 }
 #footer div .connect a.twitter {
-    background: url(../images/icons.png) no-repeat 0 -100px; /* Twitter 的初始位置 */
+    background: url(../images/icons.png) no-repeat 0 -90px; /* Twitter 的初始位置 */
     background-color: #0080FF; /* 初始背景為白色 */
     border-radius: 50%; /* 確保按鈕為圓形 */
     display: block;
