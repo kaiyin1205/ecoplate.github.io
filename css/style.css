@@ -706,13 +706,17 @@ img {
 }
 #footer div .connect a.twitter {
 	background-position: -32px 0;
+	background-color: transparent;
 }
 #footer div .connect a.facebook {
 	background-position: 0 0;
+	background-color: transparent;
 }
 #footer div .connect a.facebook:hover {
 	background-position: -30px 0;
+	background-color: transparent;
 }
 #footer div .connect a.twitter:hover {
-    background-position: -62px 0; 
+    	background-position: -62px 0; 
+	background-color: transparent; 
 }
