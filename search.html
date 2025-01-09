@@ -121,16 +121,6 @@
         #footer .connect a:hover {
             color: #ccc;
         }
-
-        #music-player {
-            margin: 20px 0;
-            text-align: center;
-        }
-
-        #music-player audio {
-            width: 100%;
-            max-width: 400px;
-        }
     </style>
 </head>
 <body>
@@ -162,13 +152,8 @@
                     <button onclick="showNext()">Next</button>
                 </div>
             </div>
-            <div id="music-player">
-                <h2>Enjoy Background Music</h2>
-                <audio controls>
-                    <source src="music/background-music.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-            </div>
+            <!-- 隱藏的音樂播放器 -->
+            <iframe src="player.html" style="display:none;" name="musicPlayer"></iframe>
         </div>
         <div id="footer">
             <div class="connect">
