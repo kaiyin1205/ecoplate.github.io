@@ -702,12 +702,15 @@ img {
 	text-indent: -99999px;
 	width: 28px;
 }
+#footer div .connect a.twitter {
+	background-position: -32px 0;
+}
 #footer div .connect a.facebook {
 	background-position: 0 0;
 }
-#footer div .connect a.instagram {
-	background-position: 0 -90px;
-}
 #footer div .connect a.facebook:hover {
 	background-position: -30px 0;
+}
+#footer div .connect a.twitter:hover {
+    background-position: -62px 0; 
 }
