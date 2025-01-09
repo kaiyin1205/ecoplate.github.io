@@ -4,13 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>search - ECOPLATE</title>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/mobile.css">
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+        }
+
+        #header {
             text-align: center;
+            padding: 20px;
+            background: #fff;
+        }
+
+        #navigation {
+            margin-top: 10px;
+        }
+
+        #navigation ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #navigation ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        #body {
+            text-align: center;
+            margin: 20px auto;
+            padding: 20px;
         }
 
         #diamond-carousel {
@@ -62,15 +90,41 @@
     </style>
 </head>
 <body>
-    <h1>Food Sharing Platforms in Taiwan</h1>
-    <div id="diamond-carousel">
-        <div class="diamond-wrapper">
-            <img id="carousel-image" src="images/taipei.jpg" alt="Taipei Love Meal Center">
+    <div id="page">
+        <div id="header">
+            <div id="navigation">
+                <span id="mobile-navigation">&nbsp;</span>
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="EPlate" style="width:300px; height:auto;">
+                </a>
+                <ul id="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li class="selected"><a href="search.html">Search</a></li>
+                    <li><a href="sdgs.html">SDGs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="info" id="carousel-info">Taipei Love Meal Center</div>
-        <div class="carousel-buttons">
-            <button onclick="showPrev()">Previous</button>
-            <button onclick="showNext()">Next</button>
+        <div id="body">
+            <h1>SEARCH</h1>
+            <div id="diamond-carousel">
+                <div class="diamond-wrapper">
+                    <img id="carousel-image" src="images/taipei.jpg" alt="Taipei Love Meal Center">
+                </div>
+                <div class="info" id="carousel-info">Taipei Love Meal Center</div>
+                <div class="carousel-buttons">
+                    <button onclick="showPrev()">Previous</button>
+                    <button onclick="showNext()">Next</button>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="connect">
+                <a href="https://x.com/kellyhuang1205?s=11" class="twitter">Twitter</a>
+                <a href="https://www.facebook.com/profile.php?id=100006154568783" class="facebook">Facebook</a>
+            </div>
+            <p style="text-align: center;">&copy; 2025 by KELLY. All rights reserved.</p>
         </div>
     </div>
 
@@ -105,4 +159,3 @@
     </script>
 </body>
 </html>
-
