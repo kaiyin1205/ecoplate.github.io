@@ -4,116 +4,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>search - ECOPLATE</title>
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet" type="text/css" href="css/mobile.css">
     <style>
-        #image-carousel {
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
             text-align: center;
-            margin: 20px 0;
         }
 
-        .carousel-image {
-            width: 100%;
-            max-width: 800px;
-            height: auto;
-            display: none;
-        }
-
-        .carousel-image:first-child {
-            display: block;
-        }
-
-        .carousel {
+        #diamond-carousel {
+            margin: 20px auto;
+            width: 300px;
             position: relative;
         }
 
-        .carousel button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
+        .diamond-wrapper {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+        }
+
+        .diamond-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        }
+
+        .info {
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .carousel-buttons {
+            margin-top: 10px;
+        }
+
+        .carousel-buttons button {
+            background-color: #444;
             color: #fff;
             border: none;
             padding: 10px 20px;
+            margin: 5px;
             cursor: pointer;
-            font-size: 18px;
+            font-size: 14px;
+            border-radius: 5px;
         }
 
-        .carousel button:hover {
-            background: rgba(0, 0, 0, 0.8);
-        }
-
-        .carousel .prev {
-            left: 10px;
-        }
-
-        .carousel .next {
-            right: 10px;
+        .carousel-buttons button:hover {
+            background-color: #666;
         }
     </style>
 </head>
 <body>
-    <div id="page">
-        <div id="header">
-            <div id="navigation">
-                <span id="mobile-navigation">&nbsp;</span>
-                <a href="index.html" class="logo">
-                    <img src="images/logo.png" alt="" style="width:300px; height:auto;">
-                </a>
-                <ul id="menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li class="selected"><a href="search.html">Search</a></li>
-                    <li><a href="sdgs.html">SDGs</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
+    <h1>Food Sharing Platforms in Taiwan</h1>
+    <div id="diamond-carousel">
+        <div class="diamond-wrapper">
+            <img id="carousel-image" src="images/taipei.jpg" alt="Taipei Love Meal Center">
         </div>
-        <div id="body" class="running">
-            <div>
-                <h1>SEARCH</h1>
-                <div id="image-carousel" class="carousel">
-                    <button class="prev" onclick="showPrevImage()">←</button>
-                    <img src="images/taipei.jpg" alt="台北愛心餐點中心" class="carousel-image">
-                    <img src="images/kaohsiung.jpg" alt="高雄愛心餐點站" class="carousel-image">
-                    <img src="images/taichung.jpg" alt="台中慈善廚房" class="carousel-image">
-                    <img src="images/hualien.jpg" alt="花蓮社區廚房" class="carousel-image">
-                    <img src="images/taitung.jpg" alt="台東幸福食物銀行" class="carousel-image">
-                    <button class="next" onclick="showNextImage()">→</button>
-                </div>
-                <h3><span>Explore Taiwan's top food sharing platforms.</span></h3>
-            </div>
-        </div>
-        <div id="footer">
-            <div>
-                <div class="connect">
-                    <a href="https://x.com/kellyhuang1205?s=11" class="twitter">twitter</a>
-                    <a href="https://www.facebook.com/profile.php?id=100006154568783" class="facebook">facebook</a>
-                </div>
-                <p style="text-align: center;">&copy; 2025 by KELLY. All rights reserved.</p>
-            </div>
+        <div class="info" id="carousel-info">Taipei Love Meal Center</div>
+        <div class="carousel-buttons">
+            <button onclick="showPrev()">Previous</button>
+            <button onclick="showNext()">Next</button>
         </div>
     </div>
 
     <script>
-        const images = document.querySelectorAll('.carousel-image');
+        const images = [
+            { src: 'images/taipei.jpg', info: 'Taipei Love Meal Center' },
+            { src: 'images/kaohsiung.jpg', info: 'Kaohsiung Love Meal Spot' },
+            { src: 'images/taichung.jpg', info: 'Taichung Kindness Kitchen' },
+            { src: 'images/hualien.jpg', info: 'Hualien Community Kitchen' },
+            { src: 'images/taitung.jpg', info: 'Taitung Happiness Food Bank' }
+        ];
+
         let currentIndex = 0;
 
-        function showNextImage() {
-            images[currentIndex].style.display = 'none';
+        function showNext() {
             currentIndex = (currentIndex + 1) % images.length;
-            images[currentIndex].style.display = 'block';
+            updateCarousel();
         }
 
-        function showPrevImage() {
-            images[currentIndex].style.display = 'none';
+        function showPrev() {
             currentIndex = (currentIndex - 1 + images.length) % images.length;
-            images[currentIndex].style.display = 'block';
+            updateCarousel();
         }
 
-        // 自動輪播每3秒切換一次圖片
-        setInterval(showNextImage, 3000);
+        function updateCarousel() {
+            const imageElement = document.getElementById('carousel-image');
+            const infoElement = document.getElementById('carousel-info');
+            imageElement.src = images[currentIndex].src;
+            imageElement.alt = images[currentIndex].info;
+            infoElement.textContent = images[currentIndex].info;
+        }
     </script>
 </body>
 </html>
+
