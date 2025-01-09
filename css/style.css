@@ -136,6 +136,7 @@ img {
 #body.home div.header div span a.email {
 	border: 5px solid #000000;
 	color: #000000;
+	background-color: #FFFFFF;
 	display: block;
 	float: left;
 	font-family: Arial;
@@ -153,6 +154,7 @@ img {
 	border: 5px solid #000000;
 	border-left: none;
 	color: #000000;
+	background-color: #FFFFFF;
 	display: block;
 	float: left;
 	font-family: Arial;
