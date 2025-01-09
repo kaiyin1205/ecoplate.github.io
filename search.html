@@ -99,6 +99,38 @@
         .carousel-buttons button:hover {
             background-color: #666;
         }
+
+        #footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        #footer .connect {
+            margin-bottom: 10px;
+        }
+
+        #footer .connect a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 10px;
+            font-size: 20px;
+        }
+
+        #footer .connect a:hover {
+            color: #ccc;
+        }
+
+        #music-player {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        #music-player audio {
+            width: 100%;
+            max-width: 400px;
+        }
     </style>
 </head>
 <body>
@@ -130,13 +162,20 @@
                     <button onclick="showNext()">Next</button>
                 </div>
             </div>
+            <div id="music-player">
+                <h2>Enjoy Background Music</h2>
+                <audio controls>
+                    <source src="music/background-music.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
         </div>
         <div id="footer">
             <div class="connect">
-                <a href="https://x.com/kellyhuang1205?s=11" class="twitter">Twitter</a>
-                <a href="https://www.facebook.com/profile.php?id=100006154568783" class="facebook">Facebook</a>
+                <a href="https://x.com/kellyhuang1205?s=11" target="_blank" class="twitter">Twitter</a>
+                <a href="https://www.facebook.com/profile.php?id=100006154568783" target="_blank" class="facebook">Facebook</a>
             </div>
-            <p style="text-align: center;">&copy; 2025 by KELLY. All rights reserved.</p>
+            <p>&copy; 2025 by KELLY. All rights reserved.</p>
         </div>
     </div>
 
@@ -171,3 +210,4 @@
     </script>
 </body>
 </html>
+
