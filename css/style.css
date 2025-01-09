@@ -705,25 +705,29 @@ img {
 	width: 28px;
 }
 #footer div .connect a.twitter {
-    background-position: -64px 0; /* Twitter 的初始位置 */
+    background: url(../images/icons.png) no-repeat -96px 0; /* Twitter 的初始位置 */
     background-color: #ffffff; /* 初始背景為白色 */
     border-radius: 50%; /* 確保按鈕為圓形 */
+    display: block;
+    height: 28px;
+    width: 28px;
     transition: background-color 0.3s ease; /* 平滑過渡效果 */
 }
 
 #footer div .connect a.facebook {
-    background-position: 0 0; /* Facebook 的初始位置 */
+    background: url(../images/icons.png) no-repeat 0 0; /* Facebook 的初始位置 */
     background-color: #ffffff; /* 初始背景為白色 */
     border-radius: 50%; /* 確保按鈕為圓形 */
+    display: block;
+    height: 28px;
+    width: 28px;
     transition: background-color 0.3s ease; /* 平滑過渡效果 */
 }
 
-#footer div .connect a.facebook:hover {
-    background-position: 0 0; /* Facebook hover 時的圖標位置 */
+#footer div .connect a.twitter:hover {
     background-color: #800080; /* 背景變為紫色 */
 }
 
-#footer div .connect a.twitter:hover {
-    background-position: -64px 0; /* Twitter hover 時的圖標位置 */
+#footer div .connect a.facebook:hover {
     background-color: #800080; /* 背景變為紫色 */
 }
