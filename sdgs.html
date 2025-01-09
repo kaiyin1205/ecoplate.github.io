@@ -43,11 +43,21 @@
 					<img src="images/logo.png" alt="" style="width:300px; height:auto;">
 				</a>
 				<ul id="menu">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="search.html">Search</a></li>
-					<li class="selected"><a href="sdgs.html">SDGs</a></li>
-					<li><a href="contact.html">Contact</a></li>
+					<li>
+						<a href="index.html">Home</a>
+					</li>
+					<li>
+						<a href="about.html">About</a>
+					</li>
+					<li>
+						<a href="search.html">Search</a>
+					</li>
+					<li class="selected">
+						<a href="sdgs.html">SDGs</a>
+					</li>
+					<li>
+						<a href="contact.html">Contact</a>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -55,7 +65,50 @@
 			<div>
 				<h1>SDGs</h1>
 				<ul>
-					<!-- Your existing SDG content -->
+					<li>
+						<img src="images/sdgs1.jpg" alt="" style="width:110px; height:auto;">
+						<div>
+							<h1>SDGs 1: NO POVERTY</h1>
+							<p>Food insecurity exacerbates poverty, as individuals and families struggle to afford basic nutrition. Addressing food issues can help lift communities out of poverty by improving economic opportunities and access to resources.</p>
+							<div class="hidden-content more-content">
+								<p>Food insecurity creates a vicious cycle of poverty where families cannot afford proper meals, leading to poor health, reduced productivity, and limited access to education. Tackling food scarcity not only ensures survival but also empowers individuals to break free from poverty through better health and increased opportunities.</p>
+							</div>
+							<span class="read-more-btn" onclick="toggleContent(this)">Keep Reading</span>
+						</div>
+					</li>
+					<li>
+						<img src="images/sdgs2.jpg" alt="" style="width:110px; height:auto;">
+						<div>
+							<h1>SDGs 2: ZERO HUNGER</h1>
+							<p>Ensuring access to nutritious food is essential to eliminate hunger and malnutrition globally.</p>
+							<div class="hidden-content more-content">
+								<p>Hunger and malnutrition remain pressing global challenges, affecting millions of individuals, particularly in vulnerable communities. Access to adequate and nutritious food not only addresses immediate hunger but also strengthens resilience, health, and well-being over the long term.</p>
+							</div>
+							<span class="read-more-btn" onclick="toggleContent(this)">Keep Reading</span>
+						</div>
+					</li>
+					<li>
+						<img src="images/sdgs3.jpg" alt="" style="width:110px; height:auto;">
+						<div>
+							<h1>SDGs 3: GOOD HEALTH AND WELL-BEING</h1>
+							<p>Access to safe and nutritious food is vital for maintaining health and preventing diseases. Food issues, such as food safety and nutrition, directly impact overall well-being and healthcare costs.</p>
+							<div class="hidden-content more-content">
+								<p>Nutritious food is the foundation for a healthy life, reducing the risk of chronic diseases such as diabetes, heart conditions, and obesity, while promoting physical and mental well-being.</p>
+							</div>
+							<span class="read-more-btn" onclick="toggleContent(this)">Keep Reading</span>
+						</div>
+					</li>
+					<li>
+						<img src="images/sdgs12.jpg" alt="" style="width:110px; height:auto;">
+						<div>
+							<h1>SDGs 12: RESPONSIBLE CONSUMPTION AND PRODUCTION</h1>
+							<p>Promoting sustainable food systems can reduce food waste and environmental impact. Encouraging responsible consumption patterns helps ensure that food resources are used efficiently and sustainably.</p>
+							<div class="hidden-content more-content">
+								<p>A shift towards mindful consumption and production practices not only preserves valuable resources but also mitigates the adverse effects of food systems on climate change, biodiversity, and ecosystems.</p>
+							</div>
+							<span class="read-more-btn" onclick="toggleContent(this)">Keep Reading</span>
+						</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -70,14 +123,6 @@
 		</div>
 	</div>
 	<script>
-		// 背景滾動效果
-		document.addEventListener("scroll", function () {
-			const scrollPosition = window.scrollY;
-			const body = document.getElementById("body");
-			body.style.backgroundPosition = `center ${scrollPosition * 0.5}px`;
-		});
-
-		// 隱藏/顯示內容
 		function toggleContent(button) {
 			const hiddenContent = button.previousElementSibling;
 			if (hiddenContent.style.display === 'none' || hiddenContent.style.display === '') {
@@ -91,4 +136,3 @@
 	</script>
 </body>
 </html>
-
