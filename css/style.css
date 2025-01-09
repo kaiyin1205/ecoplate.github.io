@@ -705,8 +705,8 @@ img {
 	width: 28px;
 }
 #footer div .connect a.twitter {
-    background: url(../images/icons.png) no-repeat -96px 0; /* Twitter 的初始位置 */
-    background-color: #ffffff; /* 初始背景為白色 */
+    background: url(../images/icons.png) no-repeat 0 -96px; /* Twitter 的初始位置 */
+    background-color: #0080FF; /* 初始背景為白色 */
     border-radius: 50%; /* 確保按鈕為圓形 */
     display: block;
     height: 28px;
@@ -716,7 +716,7 @@ img {
 
 #footer div .connect a.facebook {
     background: url(../images/icons.png) no-repeat 0 0; /* Facebook 的初始位置 */
-    background-color: #ffffff; /* 初始背景為白色 */
+    background-color: #0080FF; /* 初始背景為白色 */
     border-radius: 50%; /* 確保按鈕為圓形 */
     display: block;
     height: 28px;
