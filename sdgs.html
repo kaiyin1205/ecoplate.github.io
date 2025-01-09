@@ -8,12 +8,33 @@
 	<link rel="stylesheet" type="text/css" href="css/mobile.css">
 	<script src="js/mobile.js" type="text/javascript"></script>
 	<style>
-		.hidden-content {
-			display: none;
+		#body {
+			position: relative;
 		}
-		.more-content {
-			margin-top: 10px;
+
+		#background-image {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: url('images/second-image.jpg') no-repeat center center;
+			background-size: cover;
+			z-index: -1; /* 確保圖片在內容後面 */
 		}
+
+		#body > div {
+			position: relative;
+			z-index: 1; /* 確保文字內容在圖片之上 */
+			padding: 20px;
+			background-color: rgba(0, 0, 0, 0.7); /* 半透明黑色背景提升文字對比度 */
+			color: white;
+		}
+
+		h1, h2, p {
+			color: white;
+		}
+
 		.read-more-btn {
 			display: inline-block;
 			padding: 10px 20px;
@@ -28,6 +49,7 @@
 			cursor: pointer;
 			transition: background-color 0.3s ease, color 0.3s ease;
 		}
+
 		.read-more-btn:hover {
 			background-color: #fff;
 			color: #444;
@@ -62,6 +84,7 @@
 			</div>
 		</div>
 		<div id="body">
+			<div id="background-image"></div> <!-- 背景圖片區域 -->
 			<div>
 				<h1>SDGs</h1>
 				<ul>
@@ -137,3 +160,4 @@
 	<iframe src="player.html" style="display:none;" name="musicPlayer"></iframe>
 </body>
 </html>
+
