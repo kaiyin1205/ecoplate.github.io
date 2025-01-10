@@ -37,29 +37,33 @@ window.onload = function () {
 
     // 地圖初始化邏輯
     if (document.getElementById('map')) { // 確保 map 元素存在
-        var map = L.map('map').setView([23.6978, 120.9605], 8); // 台灣中心
+        if (typeof map === 'undefined') { // 確保 map 尚未初始化
+            var map = L.map('map').setView([23.6978, 120.9605], 8); // 台灣中心
 
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '© OpenStreetMap contributors'
-        }).addTo(map);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
 
-        // 添加標記
-        var locations = [
-            { name: "Taipei Love Meal Center", lat: 25.0330, lng: 121.5654 },
-            { name: "Kaohsiung Love Meal Spot", lat: 22.6273, lng: 120.3014 },
-            { name: "Taichung Kindness Kitchen", lat: 24.1477, lng: 120.6736 }
-        ];
+            // 添加標記
+            var locations = [
+                { name: "Taipei Love Meal Center", lat: 25.0330, lng: 121.5654 },
+                { name: "Kaohsiung Love Meal Spot", lat: 22.6273, lng: 120.3014 },
+                { name: "Taichung Kindness Kitchen", lat: 24.1477, lng: 120.6736 }
+            ];
 
-        locations.forEach(function (location) {
-            L.marker([location.lat, location.lng])
-                .addTo(map)
-                .bindPopup('<b>' + location.name + '</b>');
-        });
+            locations.forEach(function (location) {
+                L.marker([location.lat, location.lng])
+                    .addTo(map)
+                    .bindPopup('<b>' + location.name + '</b>');
+            });
 
-        // 解決地圖渲染問題
-        setTimeout(function () {
-            map.invalidateSize();
-        }, 500);
+            // 解決地圖渲染問題
+            setTimeout(function () {
+                map.invalidateSize();
+            }, 500);
+        } else {
+            console.warn("Map is already initialized!");
+        }
     }
 };
