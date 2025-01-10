@@ -1,4 +1,3 @@
-/* Website template by freewebsitetemplates.com */
 window.onload = function () {
     // 手機選單邏輯
     var getNavi = document.getElementById('menu');
