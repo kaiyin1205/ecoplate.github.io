@@ -1,4 +1,3 @@
-/* Website template by freewebsitetemplates.com */
 body {
 	margin: 0;
 	padding: 0;
@@ -93,10 +92,10 @@ img {
 	background: url(../images/bg-home.jpeg) no-repeat center top;
 	border-top: 2px solid #252525;
 	margin: 0;
-	overflow: hidden;
 	padding: 0;
 	position: relative;
 	width: 100%;
+	overflow: visible;
 }
 #body.home div {
 	background: none;
@@ -730,4 +729,11 @@ img {
 
 #footer div .connect a.facebook:hover {
     background-color: #800080; /* 背景變為紫色 */
+}
+#map {
+    height: 500px;
+    width: 100%;
+    margin: 20px 0;
+    position: relative;
+    z-index: 10; /* 確保地圖顯示在其他元素上方 */
 }
