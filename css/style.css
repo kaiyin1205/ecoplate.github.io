@@ -251,9 +251,6 @@ img {
 	overflow: hidden;
 	padding: 58px 0 4px;
 }
-#body.running div {
-	padding: 58px 0 161px;
-}
 #body div h1 {
 	background: url(../images/bg-border2.gif) no-repeat center bottom;
 	color: #FC416F;
