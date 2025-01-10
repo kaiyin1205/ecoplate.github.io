@@ -4,13 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>search - ECOPLATE</title>
-    <!-- Leaflet CSS and JS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" type="text/css" href="css/mobile.css">
-    <!-- Custom JS -->
     <script src="js/mobile.js" type="text/javascript"></script>
     <style>
         #map {
@@ -57,7 +54,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // 手動覆蓋 Leaflet 預設圖標的資源路徑
+            // 覆蓋 Leaflet 預設圖標的資源路徑
             L.Icon.Default.mergeOptions({
                 iconUrl: 'https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon.png',
                 iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon-2x.png',
@@ -65,29 +62,37 @@
             });
 
             // 初始化地圖
-            var map = L.map('map').setView([23.6978, 120.9605], 8); // Center map on Taiwan
+            var map = L.map('map').setView([23.6978, 120.9605], 8);
 
-            // 添加 OpenStreetMap 圖層
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                maxZoom: 19,
-                attribution: '© OpenStreetMap contributors'
-            }).addTo(map);
+            // 定義圖層
+            var baseLayers = {
+                "OpenStreetMap": L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 19,
+                    attribution: '© OpenStreetMap contributors'
+                }).addTo(map), // 預設圖層
+                "Satellite": L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+                    subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+                    maxZoom: 20,
+                    attribution: '© Google Maps'
+                })
+            };
 
-            // 添加測試地點
-            var locations = [
-                { name: "Taipei Love Meal Center", lat: 25.0330, lng: 121.5654 },
-                { name: "Kaohsiung Love Meal Spot", lat: 22.6273, lng: 120.3014 },
-                { name: "Taichung Kindness Kitchen", lat: 24.1477, lng: 120.6736 }
-            ];
+            var overlayLayers = {
+                "Taipei Love Meal Center": L.marker([25.0330, 121.5654]).bindPopup('<b>Taipei Love Meal Center</b>'),
+                "Kaohsiung Love Meal Spot": L.marker([22.6273, 120.3014]).bindPopup('<b>Kaohsiung Love Meal Spot</b>'),
+                "Taichung Kindness Kitchen": L.marker([24.1477, 120.6736]).bindPopup('<b>Taichung Kindness Kitchen</b>')
+            };
 
-            // 在地圖上添加標記
-            locations.forEach(function(location) {
-                L.marker([location.lat, location.lng])
-                    .addTo(map)
-                    .bindPopup('<b>' + location.name + '</b>');
+            // 將所有標記添加到地圖
+            Object.values(overlayLayers).forEach(function (layer) {
+                layer.addTo(map);
             });
+
+            // 添加圖層控制
+            L.control.layers(baseLayers, overlayLayers).addTo(map);
         });
     </script>
     <iframe src="player.html" style="display:none;" name="musicPlayer"></iframe>
 </body>
 </html>
+
